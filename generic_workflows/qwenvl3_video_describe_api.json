@@ -1,0 +1,88 @@
+{
+  "1": {
+    "inputs": {
+      "model_name": "Qwen3-VL-4B-Instruct-heretic-7refusal",
+      "quantization": "None (FP16)",
+      "attention_mode": "auto",
+      "preset_prompt": "🖼️ Detailed Description",
+      "custom_prompt": [
+        "14",
+        0
+      ],
+      "max_tokens": 768,
+      "keep_model_loaded": true,
+      "seed": 498061418,
+      "video": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "AILab_QwenVL",
+    "_meta": {
+      "title": "QwenVL"
+    }
+  },
+  "7": {
+    "inputs": {
+      "video": "video_camera_view_000027_00001_00001.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": [
+        "16",
+        0
+      ],
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "13": {
+    "inputs": {
+      "anything": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "14": {
+    "inputs": {
+      "value": "使用中文给出这个视频的详细描述。"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "$prompt.value:prompt for vlm"
+    }
+  },
+  "15": {
+    "inputs": {
+      "size": 832,
+      "interpolation_mode": "bicubic",
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "JWImageResizeByLongerSide",
+    "_meta": {
+      "title": "Image Resize by Longer Side"
+    }
+  },
+  "16": {
+    "inputs": {
+      "value": 81
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$length.value:frame count"
+    }
+  }
+}
