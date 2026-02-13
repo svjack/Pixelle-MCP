@@ -69,6 +69,31 @@ pip install soundfile
 git clone https://github.com/svjack/ComfyUI-QwenVL
 pip install -r ComfyUI-QwenVL/requirements.txt
 pip install "numpy<2"
+
+#### wan video pose transfer
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/cubiq/ComfyUI_essentials
+git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
+git clone https://github.com/M1kep/ComfyLiterals
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess
+git clone https://github.com/kijai/ComfyUI-KJNodes
+git clone https://github.com/kael558/ComfyUI-GGUF-FantasyTalking
+git clone https://github.com/aining2022/ComfyUI_Swwan
+git clone https://github.com/bollerdominik/ComfyUI-load-lora-from-url
+
+conda activate system
+pip install -r ComfyUI-WanVideoWrapper/requirements.txt
+pip install -r ComfyUI_essentials/requirements.txt
+pip install -r ComfyUI-SCAIL-Pose/requirements.txt
+#pip install -r ComfyLiterals/requirements.txt
+pip install -r ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install -r ComfyUI-KJNodes/requirements.txt
+pip install -r ComfyUI-GGUF-FantasyTalking/requirements.txt
+pip install -r ComfyUI_Swwan/requirements.txt
+pip install -r ComfyUI-load-lora-from-url/requirements.txt
+pip install "numpy<2"
+cp work/sageattention-1.0.6-py3-none-any.whl 
+pip install sageattention-1.0.6-py3-none-any.whl 
 ```
 
 ## Ollama Setup
@@ -178,6 +203,27 @@ wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/sp
 cp qwen_4b_ace15.safetensors ComfyUI/models/text_encoders
 ```
 
+### Wan video pose transfer 
+```bash
+wget https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/SCAIL/Wan21-14B-SCAIL-preview_fp8_e4m3fn_scaled_KJ.safetensors
+cp Wan21-14B-SCAIL-preview_fp8_e4m3fn_scaled_KJ.safetensors ComfyUI/models/diffusion_models
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors
+cp lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors ComfyUI/models/loras 
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_Uni3C_controlnet_fp16.safetensors
+cp Wan21_Uni3C_controlnet_fp16.safetensors ComfyUI/models/controlnet
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors
+cp Wan2_1_VAE_bf16.safetensors ComfyUI/models/vae
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors
+cp umt5-xxl-enc-fp8_e4m3fn.safetensors ComfyUI/models/text_encoders
+wget https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
+cp clip_vision_h.safetensors ComfyUI/models/clip_vision
+mkdir -p ComfyUI/models/detection
+wget https://huggingface.co/JunkyByte/easy_ViTPose/resolve/main/onnx/wholebody/vitpose-l-wholebody.onnx
+cp vitpose-l-wholebody.onnx ComfyUI/models/detection
+wget https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_checkpoint/det/yolov10m.onnx
+cp yolov10m.onnx ComfyUI/models/detection
+```
+
 ## Available Workflows
 
 ### Image Generation/Editing
@@ -191,6 +237,7 @@ cp qwen_4b_ace15.safetensors ComfyUI/models/text_encoders
 ### Video Generation
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
+3. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Pose-to-video generation
 
 ### Audio and Captioning
 1. **Qwen3 TTS**:
