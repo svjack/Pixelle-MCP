@@ -181,8 +181,10 @@ cp wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors ComfyUI/models/lora
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
 
 ### Audio and Captioning
-1. **Qwen3 TTS**: `Qwen3_TTS_Voice_Design_api` - Text-to-speech voice design. `Qwen3_TTS_Voice_Clone_api` - voice clone 
-2. **QwenVL3 Captioning**:
+1. **Qwen3 TTS**:
+   - `Qwen3_TTS_Voice_Design_api` - Text-to-speech voice design.
+   - `Qwen3_TTS_Voice_Clone_api` - Voice clone 
+3. **QwenVL3 Captioning**:
    - `qwenvl3_image_describe_api` - Image captioning using Ollama
    - `qwenvl3_video_describe_api` - Video captioning
 
