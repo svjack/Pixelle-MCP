@@ -200,3 +200,33 @@ cp wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors ComfyUI/models/lora
 
 ## Model Requirements
 Ensure sufficient storage space is available for all model files. The complete setup requires downloading multiple large model files for different functionalities.
+
+
+# MCP Inspector 连接配置指南
+
+以下是连接 `http://localhost:9004/pixelle/mcp` 的完整步骤，包含环境准备与界面配置。
+
+## 1. 环境准备（安装 Node.js）
+
+MCP Inspector 基于 Node.js 运行，需先安装运行环境。
+
+| 步骤 | 操作说明 | 备注 |
+| :--- | :--- | :--- |
+| **下载安装** | 访问 https://nodejs.org/，下载并安装 **LTS 版本**。 | 推荐使用 MSI 安装包，自动配置环境变量。 |
+| **验证安装** | 打开终端，运行 `node -v` 和 `npm -v`。 | 若显示版本号，则安装成功。 |
+
+## 2. 启动与连接配置
+
+在终端执行以下命令启动 Inspector，然后在 Web 界面中配置连接。
+
+| 配置项 | 参数值 | 说明 |
+| :--- | :--- | :--- |
+| **启动命令** | `npx @modelcontextprotocol/inspector` | 启动后浏览器自动打开 `http://localhost:6274`。 |
+| **传输协议** | **Streamable HTTP** | 根据你的日志，必须选择此模式，而非 SSE。 |
+| **服务器地址** | `http://localhost:9004/pixelle/mcp` | 填写你提供的完整 URL。 |
+| **认证配置** | (可选) | 若服务器需要 Token，在 Authentication 中设置 Header 和 Token。 |
+
+## 3. 连接与调试
+
+点击 **Connect** 按钮连接服务器。连接成功后，即可在 **Tools** 标签页中测试工具（可以看到所有已有工具及协议），或在 **Resources** 标签页中查看资源列表。
+
