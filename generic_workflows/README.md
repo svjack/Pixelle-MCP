@@ -166,6 +166,18 @@ wget https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/sp
 cp wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors ComfyUI/models/loras
 ```
 
+### ACE step 1.5 text to music 
+```bash
+wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_turbo.safetensors
+cp acestep_v1.5_turbo.safetensors ComfyUI/models/diffusion_models
+wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors
+cp ace_1.5_vae.safetensors ComfyUI/models/vae
+wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors
+cp qwen_0.6b_ace15.safetensors ComfyUI/models/text_encoders
+wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_4b_ace15.safetensors
+cp qwen_4b_ace15.safetensors ComfyUI/models/text_encoders
+```
+
 ## Available Workflows
 
 ### Image Generation/Editing
@@ -184,9 +196,12 @@ cp wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors ComfyUI/models/lora
 1. **Qwen3 TTS**:
    - `Qwen3_TTS_Voice_Design_api` - Text-to-speech voice design.
    - `Qwen3_TTS_Voice_Clone_api` - Voice clone 
-3. **QwenVL3 Captioning**:
+2. **QwenVL3 Captioning**:
    - `qwenvl3_image_describe_api` - Image captioning using Ollama
    - `qwenvl3_video_describe_api` - Video captioning
+3. **ACE Step 1.5 Text to Music**:
+   - `ace_step_1_5_text_to_music` - Text to Music (default Lyrics [Instrumental] - Pure Music)  
+ 
 
 ## Usage Notes
 - Custom workflows are located in `./data/custom_workflows`
