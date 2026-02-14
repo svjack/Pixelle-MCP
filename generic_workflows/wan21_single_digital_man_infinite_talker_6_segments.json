@@ -1,0 +1,1396 @@
+{
+  "13": {
+    "inputs": {
+      "unet_name": "Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": [
+        "193",
+        0
+      ],
+      "clip": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "16": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "17": {
+    "inputs": {
+      "conditioning": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "25": {
+    "inputs": {
+      "audio_encoder": [
+        "26",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "AudioEncoderEncode",
+    "_meta": {
+      "title": "音频编码器编码"
+    }
+  },
+  "26": {
+    "inputs": {
+      "audio_encoder_name": "wav2vec2-chinese-base_fp16.safetensors"
+    },
+    "class_type": "AudioEncoderLoader",
+    "_meta": {
+      "title": "加载音频编码器"
+    }
+  },
+  "29": {
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "33": {
+    "inputs": {
+      "lora_name": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "strength_model": 1,
+      "model": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "112": {
+    "inputs": {
+      "name": "wan2.1_infiniteTalk_single_fp16.safetensors"
+    },
+    "class_type": "ModelPatchLoader",
+    "_meta": {
+      "title": "加载模型补丁"
+    }
+  },
+  "119": {
+    "inputs": {
+      "samples": [
+        "171",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "124": {
+    "inputs": {
+      "samples": [
+        "176",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "126": {
+    "inputs": {
+      "batch_index": [
+        "130",
+        4
+      ],
+      "length": 4096,
+      "image": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "从批次获取图像"
+    }
+  },
+  "127": {
+    "inputs": {
+      "image1": [
+        "119",
+        0
+      ],
+      "image2": [
+        "126",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "组合图像批次"
+    }
+  },
+  "129": {
+    "inputs": {
+      "mode": "single_speaker",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "130": {
+    "inputs": {
+      "mode": "two_speakers",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ],
+      "previous_frames": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "149": {
+    "inputs": {
+      "value": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "150": {
+    "inputs": {
+      "value": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "167": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "168": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "129",
+        0
+      ],
+      "positive": [
+        "129",
+        1
+      ],
+      "negative": [
+        "129",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "169": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "170": {
+    "inputs": {
+      "noise_seed": 127196151926848
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "171": {
+    "inputs": {
+      "noise": [
+        "170",
+        0
+      ],
+      "guider": [
+        "168",
+        0
+      ],
+      "sampler": [
+        "167",
+        0
+      ],
+      "sigmas": [
+        "169",
+        0
+      ],
+      "latent_image": [
+        "129",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "172": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "173": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "130",
+        0
+      ],
+      "positive": [
+        "130",
+        1
+      ],
+      "negative": [
+        "130",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "174": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "175": {
+    "inputs": {
+      "noise_seed": 791586773059881
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "176": {
+    "inputs": {
+      "noise": [
+        "175",
+        0
+      ],
+      "guider": [
+        "173",
+        0
+      ],
+      "sampler": [
+        "172",
+        0
+      ],
+      "sigmas": [
+        "174",
+        0
+      ],
+      "latent_image": [
+        "130",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "177": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "119",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "178": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "127",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "179": {
+    "inputs": {
+      "mode": "two_speakers",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ],
+      "previous_frames": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "180": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "179",
+        0
+      ],
+      "positive": [
+        "179",
+        1
+      ],
+      "negative": [
+        "179",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "181": {
+    "inputs": {
+      "noise_seed": 693784447740179
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "182": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "183": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "184": {
+    "inputs": {
+      "noise": [
+        "181",
+        0
+      ],
+      "guider": [
+        "180",
+        0
+      ],
+      "sampler": [
+        "182",
+        0
+      ],
+      "sigmas": [
+        "183",
+        0
+      ],
+      "latent_image": [
+        "179",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "185": {
+    "inputs": {
+      "samples": [
+        "184",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "186": {
+    "inputs": {
+      "batch_index": [
+        "179",
+        4
+      ],
+      "length": 4096,
+      "image": [
+        "185",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "从批次获取图像"
+    }
+  },
+  "187": {
+    "inputs": {
+      "image1": [
+        "127",
+        0
+      ],
+      "image2": [
+        "186",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "组合图像批次"
+    }
+  },
+  "188": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "187",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "189": {
+    "inputs": {
+      "value": 480
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$width.value:image width"
+    }
+  },
+  "190": {
+    "inputs": {
+      "value": 832
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$height.value:image height"
+    }
+  },
+  "191": {
+    "inputs": {
+      "audio": "马正阳音频.wav",
+      "start_time": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudioUpload",
+    "_meta": {
+      "title": "$audio.audio!:audio"
+    }
+  },
+  "192": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "193": {
+    "inputs": {
+      "value": "Fixed shooting lens,one characters are talking."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "$prompt.value:prompt for video"
+    }
+  },
+  "194": {
+    "inputs": {
+      "mode": "two_speakers",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ],
+      "previous_frames": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "195": {
+    "inputs": {
+      "noise_seed": 693784447740179
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "196": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "197": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "198": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "194",
+        0
+      ],
+      "positive": [
+        "194",
+        1
+      ],
+      "negative": [
+        "194",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "199": {
+    "inputs": {
+      "noise": [
+        "195",
+        0
+      ],
+      "guider": [
+        "198",
+        0
+      ],
+      "sampler": [
+        "196",
+        0
+      ],
+      "sigmas": [
+        "197",
+        0
+      ],
+      "latent_image": [
+        "194",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "200": {
+    "inputs": {
+      "samples": [
+        "199",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "201": {
+    "inputs": {
+      "batch_index": [
+        "194",
+        4
+      ],
+      "length": 4096,
+      "image": [
+        "200",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "从批次获取图像"
+    }
+  },
+  "202": {
+    "inputs": {
+      "image1": [
+        "187",
+        0
+      ],
+      "image2": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "组合图像批次"
+    }
+  },
+  "203": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "202",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "204": {
+    "inputs": {
+      "mode": "two_speakers",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ],
+      "previous_frames": [
+        "202",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "205": {
+    "inputs": {
+      "noise_seed": 693784447740179
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "206": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "207": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "204",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "208": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "204",
+        0
+      ],
+      "positive": [
+        "204",
+        1
+      ],
+      "negative": [
+        "204",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "209": {
+    "inputs": {
+      "noise": [
+        "205",
+        0
+      ],
+      "guider": [
+        "208",
+        0
+      ],
+      "sampler": [
+        "206",
+        0
+      ],
+      "sigmas": [
+        "207",
+        0
+      ],
+      "latent_image": [
+        "204",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "210": {
+    "inputs": {
+      "samples": [
+        "209",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "211": {
+    "inputs": {
+      "batch_index": [
+        "204",
+        4
+      ],
+      "length": 4096,
+      "image": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "从批次获取图像"
+    }
+  },
+  "212": {
+    "inputs": {
+      "image1": [
+        "202",
+        0
+      ],
+      "image2": [
+        "211",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "组合图像批次"
+    }
+  },
+  "213": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "212",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "214": {
+    "inputs": {
+      "mode": "two_speakers",
+      "width": [
+        "149",
+        0
+      ],
+      "height": [
+        "150",
+        0
+      ],
+      "length": 81,
+      "motion_frame_count": 9,
+      "audio_scale": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "model_patch": [
+        "112",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "negative": [
+        "17",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ],
+      "audio_encoder_output_1": [
+        "25",
+        0
+      ],
+      "start_image": [
+        "192",
+        0
+      ],
+      "previous_frames": [
+        "212",
+        0
+      ]
+    },
+    "class_type": "WanInfiniteTalkToVideo",
+    "_meta": {
+      "title": "WanInfiniteTalkToVideo"
+    }
+  },
+  "215": {
+    "inputs": {
+      "noise_seed": 693784447740179
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "216": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "217": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 4,
+      "denoise": 1,
+      "model": [
+        "214",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "218": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "214",
+        0
+      ],
+      "positive": [
+        "214",
+        1
+      ],
+      "negative": [
+        "214",
+        2
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "219": {
+    "inputs": {
+      "noise": [
+        "215",
+        0
+      ],
+      "guider": [
+        "218",
+        0
+      ],
+      "sampler": [
+        "216",
+        0
+      ],
+      "sigmas": [
+        "217",
+        0
+      ],
+      "latent_image": [
+        "214",
+        3
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "220": {
+    "inputs": {
+      "samples": [
+        "219",
+        0
+      ],
+      "vae": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "221": {
+    "inputs": {
+      "batch_index": [
+        "214",
+        4
+      ],
+      "length": 4096,
+      "image": [
+        "220",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "从批次获取图像"
+    }
+  },
+  "222": {
+    "inputs": {
+      "image1": [
+        "212",
+        0
+      ],
+      "image2": [
+        "221",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "组合图像批次"
+    }
+  },
+  "223": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "222",
+        0
+      ],
+      "audio": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  }
+}
