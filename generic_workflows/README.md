@@ -226,6 +226,18 @@ wget https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_check
 cp yolov10m.onnx ComfyUI/models/detection
 ```
 
+### Wan InfiniteTalk single digit man
+```bash
+wget https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors
+cp Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors ComfyUI/models/diffusion_models
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors
+cp lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors ComfyUI/models/loras
+wget https://huggingface.co/Kijai/wav2vec2_safetensors/resolve/main/wav2vec2-chinese-base_fp16.safetensors
+cp wav2vec2-chinese-base_fp16.safetensors ComfyUI/models/audio_encoders
+wget https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/model_patches/wan2.1_infiniteTalk_single_fp16.safetensors
+cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
+```
+
 ## Available Workflows
 
 ### Image Generation/Editing
@@ -240,6 +252,7 @@ cp yolov10m.onnx ComfyUI/models/detection
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
 3. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
+4. **Wan2.1 InfiniteTalk digit man**: `wan21_single_digital_man_infinite_talker_{num}_segments` - Image & Audio-to-video generation
 
 ### Audio and Captioning
 1. **Qwen3 TTS**:
