@@ -92,7 +92,9 @@ pip install -r ComfyUI-GGUF-FantasyTalking/requirements.txt
 pip install -r ComfyUI_Swwan/requirements.txt
 pip install -r ComfyUI-load-lora-from-url/requirements.txt
 pip install "numpy<2"
-cp work/sageattention-1.0.6-py3-none-any.whl 
+
+cd ../../
+cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
 ```
 
