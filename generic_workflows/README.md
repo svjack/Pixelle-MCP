@@ -27,11 +27,11 @@ pip install modelscope datasets huggingface_hub "httpx[socks]"
 pip install comfy-cli
 pip install "questionary<2.1.0"
 pip install --upgrade typer
+comfy --here install
 ```
 
-### 2. Install and Launch ComfyUI
+### 2. Launch ComfyUI
 ```bash
-comfy --here install
 comfy launch -- --listen 0.0.0.0
 ```
 
