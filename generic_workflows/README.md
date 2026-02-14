@@ -239,7 +239,7 @@ cp yolov10m.onnx ComfyUI/models/detection
 ### Video Generation
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
-3. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Pose-to-video generation
+3. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
 
 ### Audio and Captioning
 1. **Qwen3 TTS**:
