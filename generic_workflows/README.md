@@ -119,7 +119,7 @@ ollama stop huihui_ai/qwen3-vl-abliterated:8b
 ### 1. Clone and Setup
 ```bash
 conda activate base
-git clone https://github.com/AIDC-AI/Pixelle-MCP.git
+git clone https://github.com/svjack/Pixelle-MCP.git
 cd Pixelle-MCP
 pip install uv
 uv run pixelle
