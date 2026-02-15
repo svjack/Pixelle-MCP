@@ -279,7 +279,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 ### Video Generation
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
-3. **Wan2.2 Multiple shots Image-to-Video**: `Wan2_2_SVI_6_Shots_image_to_video_api` - Multiple Shots Image-to-video generation
+3. **Wan2.2 SVI Multiple shots Image-to-Video**: `Wan2_2_SVI_6_Shots_image_to_video_api` - Multiple Shots Image-to-video generation
 4. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
 5. **Wan2.1 InfiniteTalk digit man**: `wan21_single_digital_man_infinite_talker_{num}_segments` - Image & Audio-to-video generation
 
