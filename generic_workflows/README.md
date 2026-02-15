@@ -313,6 +313,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
  
 
 ## Usage Notes
+- Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
 - Custom workflows are located in `./data/custom_workflows`
 - Use `ls ./data/custom_workflows` to list available workflows
 - Check workflow parameters for each specific workflow to understand input requirements
