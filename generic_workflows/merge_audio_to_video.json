@@ -1,0 +1,87 @@
+{
+  "1": {
+    "inputs": {
+      "audio": "f3c2a4c2dbf84b85bb5d4ed045666cc5.mp3",
+      "start_time": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudioUpload",
+    "_meta": {
+      "title": "$audio.audio!:audio"
+    }
+  },
+  "2": {
+    "inputs": {
+      "video": "wan_00001.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "3": {
+    "inputs": {
+      "frame_rate": [
+        "4",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "2",
+        0
+      ],
+      "audio": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "4": {
+    "inputs": {
+      "video_info": [
+        "2",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "merge_method": "add",
+      "audio1": [
+        "2",
+        2
+      ],
+      "audio2": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "AudioMerge",
+    "_meta": {
+      "title": "音频合并"
+    }
+  }
+}

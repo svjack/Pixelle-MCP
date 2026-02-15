@@ -1,0 +1,228 @@
+{
+  "4": {
+    "inputs": {
+      "vae_name": "vae_128d_48k_fp16.safetensors",
+      "synchformer_name": "synchformer_state_dict_fp16.safetensors"
+    },
+    "class_type": "HunyuanDependenciesLoader",
+    "_meta": {
+      "title": "Hunyuan-Foley Dependencies Loader"
+    }
+  },
+  "17": {
+    "inputs": {
+      "index": 1,
+      "audio_batch": [
+        "40",
+        1
+      ]
+    },
+    "class_type": "SelectAudioFromBatch",
+    "_meta": {
+      "title": "Select Audio From Batch"
+    }
+  },
+  "23": {
+    "inputs": {
+      "audioUI": "",
+      "audio": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewAudio",
+    "_meta": {
+      "title": "预览音频"
+    }
+  },
+  "40": {
+    "inputs": {
+      "frame_rate": [
+        "77",
+        0
+      ],
+      "duration": [
+        "77",
+        7
+      ],
+      "prompt": [
+        "84",
+        0
+      ],
+      "negative_prompt": "",
+      "cfg_scale": 4.5,
+      "steps": 50,
+      "sampler": "euler",
+      "batch_size": 1,
+      "seed": 55582,
+      "force_offload": false,
+      "hunyuan_model": [
+        "73",
+        0
+      ],
+      "hunyuan_deps": [
+        "4",
+        0
+      ],
+      "image": [
+        "76",
+        0
+      ],
+      "torch_compile_cfg": [
+        "75",
+        0
+      ],
+      "block_swap_args": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "HunyuanFoleySampler",
+    "_meta": {
+      "title": "Hunyuan-Foley Sampler"
+    }
+  },
+  "57": {
+    "inputs": {
+      "frame_rate": [
+        "77",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "76",
+        0
+      ],
+      "audio": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "58": {
+    "inputs": {
+      "audioUI": "",
+      "audio": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "PreviewAudio",
+    "_meta": {
+      "title": "预览音频"
+    }
+  },
+  "73": {
+    "inputs": {
+      "model_name": "hunyuanvideo_foley.safetensors",
+      "precision": "bf16",
+      "quantization": "auto"
+    },
+    "class_type": "HunyuanModelLoader",
+    "_meta": {
+      "title": "Hunyuan-Foley Model Loader"
+    }
+  },
+  "74": {
+    "inputs": {
+      "blocks_to_swap": 30,
+      "use_non_blocking": false,
+      "prefetch_blocks": 1,
+      "block_swap_debug": false
+    },
+    "class_type": "HunyuanBlockSwap",
+    "_meta": {
+      "title": "Hunyuan-Foley BlockSwap Settings"
+    }
+  },
+  "75": {
+    "inputs": {
+      "backend": "inductor",
+      "fullgraph": false,
+      "mode": "default",
+      "dynamic": "false",
+      "dynamo_cache_limit": 64
+    },
+    "class_type": "HunyuanFoleyTorchCompile",
+    "_meta": {
+      "title": "Hunyuan-Foley Torch Compile"
+    }
+  },
+  "76": {
+    "inputs": {
+      "video": "81cd181fd9e24d49bff06eb07cb57046.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "77": {
+    "inputs": {
+      "video_info": [
+        "76",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "78": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "77",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "79": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "77",
+        7
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "84": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "$video_caption.value!:video caption in english"
+    }
+  }
+}
