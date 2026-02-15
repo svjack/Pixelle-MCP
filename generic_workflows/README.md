@@ -1,7 +1,7 @@
 # Pixelle-MCP Project Setup Guide
 
 ## Overview
-Pixelle-MCP is an AI-powered media generation platform that integrates ComfyUI workflows with various AI models for image/video generation, editing, and captioning.
+Pixelle-MCP is an AI-powered media generation platform that integrates ComfyUI workflows with various AI models for image/video generation, editing, and captioning. (Both Step-By-Step or Plan-Exe-Overall)
 
 ## Prerequisites
 - Linux-based system
