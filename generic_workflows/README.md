@@ -70,6 +70,9 @@ git clone https://github.com/svjack/ComfyUI-QwenVL
 pip install -r ComfyUI-QwenVL/requirements.txt
 pip install "numpy<2"
 
+git clone https://github.com/svjack/ComfyUI-HunyuanVideo-Foley
+pip install -r ComfyUI-HunyuanVideo-Foley/requirements.txt
+
 #### wan video pose transfer
 git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 git clone https://github.com/cubiq/ComfyUI_essentials
@@ -205,6 +208,19 @@ wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/sp
 cp qwen_4b_ace15.safetensors ComfyUI/models/text_encoders
 ```
 
+### Hunyuanvideo Foley add audio to video
+```bash
+mkdir -p ComfyUI/models/foley
+export HF_ENDPOINT=https://hf-mirror.com
+hf download phazei/HunyuanVideo-Foley hunyuanvideo_foley.safetensors --local-dir="."
+# wget https://huggingface.co/phazei/HunyuanVideo-Foley/resolve/main/hunyuanvideo_foley.safetensors
+cp hunyuanvideo_foley.safetensors ComfyUI/models/foley
+wget https://huggingface.co/phazei/HunyuanVideo-Foley/resolve/main/synchformer_state_dict_fp16.safetensors
+cp synchformer_state_dict_fp16.safetensors ComfyUI/models/foley
+wget https://huggingface.co/phazei/HunyuanVideo-Foley/resolve/main/vae_128d_48k_fp16.safetensors
+cp vae_128d_48k_fp16.safetensors ComfyUI/models/foley
+```
+
 ### Wan video pose transfer 
 ```bash
 wget https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/SCAIL/Wan21-14B-SCAIL-preview_fp8_e4m3fn_scaled_KJ.safetensors
@@ -262,7 +278,9 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - `qwenvl3_image_describe_api` - Image captioning using Ollama
    - `qwenvl3_video_describe_api` - Video captioning
 3. **ACE Step 1.5 Text to Music**:
-   - `ace_step_1_5_text_to_music` - Text to Music (default Lyrics [Instrumental] - Pure Music)  
+   - `ace_step_1_5_text_to_music` - Text to Music (default Lyrics [Instrumental] - Pure Music)
+4. **Hunyuanvideo Foley add audio to video**:
+   - `{add/merge}_audio_to_video_Foley` - add or merge background audio to video
  
 
 ## Usage Notes
