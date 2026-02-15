@@ -198,7 +198,7 @@
         1
       ],
       "length": [
-        "167",
+        "181",
         0
       ],
       "batch_size": 1,
@@ -415,6 +415,52 @@
     "class_type": "LoadImage",
     "_meta": {
       "title": "$image2.image!:second image"
+    }
+  },
+  "178": {
+    "inputs": {
+      "value": 81
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "整数"
+    }
+  },
+  "180": {
+    "inputs": {
+      "comparison": "a >= b",
+      "a": [
+        "167",
+        0
+      ],
+      "b": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "比较"
+    }
+  },
+  "181": {
+    "inputs": {
+      "boolean": [
+        "180",
+        0
+      ],
+      "on_true": [
+        "167",
+        0
+      ],
+      "on_false": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "easy ifElse",
+    "_meta": {
+      "title": "是否判断"
     }
   }
 }
