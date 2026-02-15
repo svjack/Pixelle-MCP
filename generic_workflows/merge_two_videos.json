@@ -1,0 +1,90 @@
+{
+  "1": {
+    "inputs": {
+      "video": "video_camera_view_000027_00001_00001.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video1.video!:input video 1"
+    }
+  },
+  "2": {
+    "inputs": {
+      "video": "video_camera_view_000027_00001_00001.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video2.video!:input video 2"
+    }
+  },
+  "3": {
+    "inputs": {
+      "merge_strategy": "match A",
+      "scale_method": "nearest-exact",
+      "crop": "disabled",
+      "images_A": [
+        "1",
+        0
+      ],
+      "images_B": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "VHS_MergeImages",
+    "_meta": {
+      "title": "Merge Images 🎥🅥🅗🅢"
+    }
+  },
+  "4": {
+    "inputs": {
+      "video_info": [
+        "1",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "frame_rate": [
+        "4",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "1": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "2": {
+    "inputs": {
+      "size": [
+        "3",
+        0
+      ],
+      "interpolation_mode": "bicubic",
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "JWImageResizeByLongerSide",
+    "_meta": {
+      "title": "Image Resize by Longer Side"
+    }
+  },
+  "3": {
+    "inputs": {
+      "value": 832
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$longest.value!:image resize by longer side"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  }
+}
