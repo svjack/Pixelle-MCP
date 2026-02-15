@@ -77,6 +77,9 @@ git clone https://github.com/rgthree/rgthree-comfy
 pip install -r rgthree-comfy/requirements.txt
 git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes
 
+git clone https://github.com/city96/ComfyUI-GGUF
+pip install -r ComfyUI-GGUF/requirements.txt
+
 #### wan video pose transfer
 git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 git clone https://github.com/cubiq/ComfyUI_essentials
@@ -208,6 +211,18 @@ modelscope download svjack/SVI --local_dir="."
 cp SVI_v2_PRO_Wan2.2-I2V-A14B_*.safetensors ComfyUI/models/loras
 ```
 
+### Wan2.2 First-Last Image-to-Video 
+```bash
+#wget https://huggingface.co/QuantStack/Wan2.2-I2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf
+#cp Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf ComfyUI/models/diffusion_models
+#wget https://huggingface.co/QuantStack/Wan2.2-I2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf
+#cp Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf ComfyUI/models/diffusion_models
+wget https://huggingface.co/QuantStack/Wan2.2-Fun-A14B-InP-GGUF/resolve/main/HighNoise/Wan2.2-Fun-A14B-InP_HighNoise-Q4_K_M.gguf
+cp Wan2.2-Fun-A14B-InP_HighNoise-Q4_K_M.gguf ComfyUI/models/diffusion_models
+wget https://huggingface.co/QuantStack/Wan2.2-Fun-A14B-InP-GGUF/resolve/main/LowNoise/Wan2.2-Fun-A14B-InP_LowNoise-Q4_K_M.gguf
+cp Wan2.2-Fun-A14B-InP_LowNoise-Q4_K_M.gguf ComfyUI/models/diffusion_models
+```
+
 ### ACE step 1.5 text to music 
 ```bash
 wget https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_turbo.safetensors
@@ -279,9 +294,10 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 ### Video Generation
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
-3. **Wan2.2 SVI Multiple shots Image-to-Video**: `Wan2_2_SVI_6_Shots_image_to_video_api` - Multiple Shots Image-to-video generation
-4. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
-5. **Wan2.1 InfiniteTalk digit man**: `wan21_single_digital_man_infinite_talker_{num}_segments` - Image & Audio-to-video generation
+3. **Wan2.2 First-Last Image-to-Video**: `wan2_2_first_last_image_to_video_inpaint_api` - FL-Image-to-video generation (default length 81, don't below this value)
+4. **Wan2.2 SVI Multiple shots Image-to-Video**: `Wan2_2_SVI_6_Shots_image_to_video_api` - Multiple Shots Image-to-video generation
+5. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
+6. **Wan2.1 InfiniteTalk digit man**: `wan21_single_digital_man_infinite_talker_{num}_segments` - Image & Audio-to-video generation
 
 ### Audio and Captioning
 1. **Qwen3 TTS**:
