@@ -315,7 +315,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 ## Usage Notes
 - Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
    - Step-by-Step Execution:
-   - Planning & Overall Execution:
+   - Planning & Overall Execution: - plan_knowledge.json
       - Give Your Plan 
       - Now, given the specific input parameters you used for various tools, the returned result is an ordered JSON structure.
       - Edit this JSON structure.
