@@ -114,7 +114,7 @@ cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
 ```
 
-## Install Chrome in Linux
+## Install Chrome in Linux (For Html Render)
 ```bash
 ### install chorme in linux
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -312,6 +312,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - `qwen_image_text_to_image_api` - Text-to-image generation
    - `qwen_image_edit_one_pic_api` - Single image editing
    - `qwen_image_edit_two_pic_api` - Dual image editing
+      - 使用 `图片1` 和 `图片2` 的提示词格式指定对应的图片 
    - `qwen_image_edit_two_pic_head_swap` - Face swapping
 
 ### Video Generation
@@ -335,11 +336,15 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - `{add/merge}_audio_to_video_Foley` - add or merge background audio to video
 
 
-### Html template render to Image 
+### Html template render to Image\Video
 1. **Html template render to PNG**: `html_template_render` - html template (image + title + text fields) render to image, can produce short videos' frame, PPT and so on.
-   - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，并生成统一的流行风格html模板代码，并进行3次渲染。
-   - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
-   - prompt:完成一个3张水族馆的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字,并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
+   - 01. render to PNG:
+      - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
+      - prompt:完成一个3张水族馆的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字,并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
+   - 02. render to Short video with audio: (video frame)
+      - prompt: 完成一个3张水族馆图片合成的有声广告短视频任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对3个渲染后图片加上各自的解说音频生成解说短视频片段，将3个有声视频连接成一个有声短视频
+      - prompt:完成一个5张日常漫画图片合成的心灵鸡汤短视频任务,使用z_image_turbo生成5张图片，图片中不包含任何文字，但有相同的日系治愈风格，并生成统一的流行风格html模板代码（采用粉色的浪漫风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行5次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对5个渲染后图片加上各自的解说音频生成解说短视频片段，将5个有声视频连接成一个有声短视频
+
 
 ## Usage Notes
 - Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
