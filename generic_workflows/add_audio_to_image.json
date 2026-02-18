@@ -1,0 +1,159 @@
+{
+  "1": {
+    "inputs": {
+      "audio": "王翔介绍衣服.wav",
+      "start_time": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudioUpload",
+    "_meta": {
+      "title": "$audio.audio!:audio"
+    }
+  },
+  "3": {
+    "inputs": {
+      "frame_rate": [
+        "13",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "9",
+        0
+      ],
+      "audio": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "image": "4a82e1d7a39a471496d6c31e16eb5afb.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!:image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "7": {
+    "inputs": {
+      "float": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "floatToInt _O",
+    "_meta": {
+      "title": "floatToInt _O"
+    }
+  },
+  "8": {
+    "inputs": {
+      "a": [
+        "14",
+        0
+      ],
+      "b": [
+        "12",
+        0
+      ],
+      "operation": "multiply"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "整数运算"
+    }
+  },
+  "9": {
+    "inputs": {
+      "multiply_by": [
+        "8",
+        0
+      ],
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "VHS_DuplicateImages",
+    "_meta": {
+      "title": "Repeat Images 🎥🅥🅗🅢"
+    }
+  },
+  "10": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "12": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$fps.value:frame per second"
+    }
+  },
+  "13": {
+    "inputs": {
+      "int": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "intToFloat _O",
+    "_meta": {
+      "title": "intToFloat _O"
+    }
+  },
+  "14": {
+    "inputs": {
+      "a": [
+        "7",
+        0
+      ],
+      "b": 1,
+      "operation": "add"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "整数运算"
+    }
+  }
+}
