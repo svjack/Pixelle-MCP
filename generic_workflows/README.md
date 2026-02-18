@@ -52,7 +52,10 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/yolain/ComfyUI-Easy-Use
 pip install -r ComfyUI-Easy-Use/requirements.txt
 
-git clone https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
+#git clone https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
+git clone https://github.com/svjack/ComfyUI-QualityOfLifeSuit_Omar92
+# output file locate in: /home/featurize/ComfyUI/custom_nodes/ComfyUI-QualityOfLifeSuit_Omar92/output
+
 git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
 pip install -r ComfyUI-VideoHelperSuite/requirements.txt
 
