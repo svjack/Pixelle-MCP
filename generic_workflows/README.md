@@ -106,9 +106,29 @@ pip install -r ComfyUI_Swwan/requirements.txt
 pip install -r ComfyUI-load-lora-from-url/requirements.txt
 pip install "numpy<2"
 
+git clone https://github.com/svjack/ComfyUI-HTMLRenderer
+pip install -r ComfyUI-HTMLRenderer/requirements.txt
+
 cd ../../
 cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
+```
+
+## Install Chrome in Linux
+```bash
+### install chorme in linux
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+cp work/google-chrome-stable_current_amd64.deb .
+sudo apt install ./google-chrome-stable_current_amd64.deb
+google-chrome --version
+# Google Chrome 145.0.7632.75 
+which google-chrome
+# wget https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.75/linux64/chromedriver-linux64.zip
+cp work/chromedriver-linux64.zip . 
+unzip chromedriver-linux64.zip
+sudo cp chromedriver-linux64/chromedriver /usr/local/bin/
+sudo chmod +x /usr/local/bin/chromedriver
+chromedriver --version
 ```
 
 ## Ollama Setup
@@ -313,7 +333,13 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - `ace_step_1_5_text_to_music` - Text to Music (default Lyrics [Instrumental] - Pure Music)
 4. **Hunyuanvideo Foley add audio to video**:
    - `{add/merge}_audio_to_video_Foley` - add or merge background audio to video
- 
+
+
+### Html template render to Image 
+1. **Html template render to PNG**: `html_template_render` - html template (image + title + text fields) render to image, can produce short videos' frame, PPT and so on.
+   - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，并生成统一的流行风格html模板代码，并进行3次渲染。
+   - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
+   - prompt:完成一个3张水族馆的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字,并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
 
 ## Usage Notes
 - Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
