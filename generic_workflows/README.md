@@ -106,6 +106,8 @@ pip install -r ComfyUI_Swwan/requirements.txt
 pip install -r ComfyUI-load-lora-from-url/requirements.txt
 pip install "numpy<2"
 
+pip install playwright
+playwright install chromium
 git clone https://github.com/svjack/ComfyUI-HTMLRenderer
 pip install -r ComfyUI-HTMLRenderer/requirements.txt
 
