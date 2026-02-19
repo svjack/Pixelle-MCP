@@ -1,0 +1,238 @@
+{
+  "3": {
+    "inputs": {
+      "video": [
+        "7",
+        0
+      ],
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "Load Video (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "video_info": [
+        "3",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "7": {
+    "inputs": {
+      "title": [
+        "20",
+        0
+      ],
+      "text": [
+        "21",
+        0
+      ],
+      "template_html": [
+        "22",
+        0
+      ],
+      "duration_seconds": [
+        "9",
+        0
+      ],
+      "fps": 30,
+      "output_width": 1080,
+      "output_height": 1920,
+      "image_rotation_speed": 1,
+      "title_scale_speed": 1,
+      "text_scroll_speed": 1,
+      "ext_json": "{}",
+      "animation_data": "{}",
+      "save_to_output": true,
+      "output_filename": "html_video_output",
+      "image": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "HTMLVideoRecorderPlaywright",
+    "_meta": {
+      "title": "HTML视频录制器（Playwright版）"
+    }
+  },
+  "9": {
+    "inputs": {
+      "int": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "intToFloat _O",
+    "_meta": {
+      "title": "intToFloat _O"
+    }
+  },
+  "10": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "12": {
+    "inputs": {
+      "value": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "浮点数"
+    }
+  },
+  "13": {
+    "inputs": {
+      "value": "a - b",
+      "a": [
+        "12",
+        0
+      ],
+      "b": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "easy simpleMath",
+    "_meta": {
+      "title": "Simple Math"
+    }
+  },
+  "14": {
+    "inputs": {
+      "value": "a * b",
+      "a": [
+        "13",
+        1
+      ],
+      "b": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "easy simpleMath",
+    "_meta": {
+      "title": "Simple Math"
+    }
+  },
+  "15": {
+    "inputs": {
+      "split_index": [
+        "14",
+        0
+      ],
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Split Images 🎥🅥🅗🅢"
+    }
+  },
+  "17": {
+    "inputs": {
+      "frame_rate": [
+        "5",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "15",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "18": {
+    "inputs": {
+      "image": "example.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!:image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "value": 10
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$video_length.value:video length in second"
+    }
+  },
+  "20": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "$title.text!:title"
+    }
+  },
+  "21": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "$text.text!:text"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <style>\n        /* 字体定义 - 开始 */\n        @font-face {\n            font-family: 'LongCang';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/Long-Cang-Regular.ttf') format('truetype');\n            font-weight: normal;\n            font-style: normal;\n            font-display: swap;\n        }\n        @font-face {\n            font-family: 'SourceHanSansCN';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/SourceHanSansCN-Regular.ttf') format('truetype');\n            font-weight: normal;\n            font-style: normal;\n            font-display: swap;\n        }\n        @font-face {\n            font-family: 'SourceHanSansCN';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/SourceHanSansCN-Bold.ttf') format('truetype');\n            font-weight: bold;\n            font-style: normal;\n            font-display: swap;\n        }\n        /* 字体定义 - 结束 */\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            width: 1080px;\n            height: 1920px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            font-family: 'LongCang', 'SourceHanSansCN', sans-serif;\n            overflow: hidden;\n            position: relative;\n        }\n\n        .container {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            width: 100%;\n            height: 100%;\n            padding: 40px;\n        }\n\n        /* 图像容器 - 圆形剪裁 */\n        .image-container {\n            position: relative;\n            width: 400px;\n            height: 400px;\n            margin-bottom: 60px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .circular-image {\n            width: 350px;\n            height: 350px;\n            border-radius: 50%;\n            object-fit: cover;\n            border: 8px solid rgba(255, 255, 255, 0.3);\n            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);\n            animation: rotate 20s linear infinite;\n        }\n\n        @keyframes rotate {\n            0% { transform: rotate(0deg); }\n            100% { transform: rotate(360deg); }\n        }\n\n        /* 标题 - 反复缩放动画 */\n        .title-container {\n            margin-bottom: 40px;\n            text-align: center;\n        }\n\n        .scaling-title {\n            font-size: 48px;\n            font-weight: bold;\n            color: #ffffff;\n            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);\n            animation: scalePulse 3s ease-in-out infinite;\n            display: inline-block;\n        }\n\n        @keyframes scalePulse {\n            0% { transform: scale(1); opacity: 0.8; }\n            50% { transform: scale(1.15); opacity: 1; }\n            100% { transform: scale(1); opacity: 0.8; }\n        }\n\n        /* 文本 - 滚动显示 */\n        .text-container {\n            width: 80%;\n            max-width: 800px;\n            height: 200px;\n            overflow: hidden;\n            position: relative;\n            background: rgba(255, 255, 255, 0.1);\n            border-radius: 20px;\n            padding: 25px;\n            margin-top: 30px;\n            backdrop-filter: blur(10px);\n            border: 2px solid rgba(255, 255, 255, 0.2);\n        }\n\n        .scrolling-text {\n            font-size: 28px;\n            color: #ffffff;\n            line-height: 1.5;\n            white-space: pre-wrap;\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            padding: 25px;\n            animation: scrollText 20s linear infinite;\n        }\n\n        @keyframes scrollText {\n            0% {\n                transform: translateY(200px);\n                opacity: 0;\n            }\n            10% {\n                transform: translateY(0);\n                opacity: 1;\n            }\n            90% {\n                transform: translateY(0);\n                opacity: 1;\n            }\n            100% {\n                transform: translateY(-200px);\n                opacity: 0;\n            }\n        }\n\n        /* 装饰元素 */\n        .decoration {\n            position: absolute;\n            width: 100%;\n            height: 100%;\n            pointer-events: none;\n            z-index: -1;\n        }\n\n        .floating-element {\n            position: absolute;\n            width: 60px;\n            height: 60px;\n            background: rgba(255, 255, 255, 0.1);\n            border-radius: 50%;\n            animation: float 8s ease-in-out infinite;\n        }\n\n        .floating-element:nth-child(1) {\n            top: 15%;\n            left: 10%;\n            animation-delay: 0s;\n        }\n\n        .floating-element:nth-child(2) {\n            top: 25%;\n            right: 15%;\n            animation-delay: -2s;\n        }\n\n        .floating-element:nth-child(3) {\n            bottom: 20%;\n            left: 20%;\n            animation-delay: -4s;\n        }\n\n        .floating-element:nth-child(4) {\n            bottom: 30%;\n            right: 10%;\n            animation-delay: -6s;\n        }\n\n        @keyframes float {\n            0%, 100% {\n                transform: translateY(0) rotate(0deg);\n            }\n            50% {\n                transform: translateY(-30px) rotate(180deg);\n            }\n        }\n\n        /* 底部信息 */\n        .footer {\n            position: absolute;\n            bottom: 30px;\n            left: 0;\n            width: 100%;\n            text-align: center;\n            color: rgba(255, 255, 255, 0.7);\n            font-size: 20px;\n            padding: 0 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"decoration\">\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n    </div>\n    \n    <div class=\"container\">\n        <div class=\"image-container\">\n            <img id=\"dynamicImage\" class=\"circular-image\" src=\"{{image_url}}\" alt=\"动态图像\">\n        </div>\n        \n        <div class=\"title-container\">\n            <h1 class=\"scaling-title\">{{title}}</h1>\n        </div>\n        \n        <div class=\"text-container\">\n            <div class=\"scrolling-text\">{{text}}</div>\n        </div>\n    </div>\n    \n    <div class=\"footer\">\n        <p>视频录制时间: {{current_time}} | 帧率: {{fps}}fps | 时长: {{duration}}秒</p>\n    </div>\n</body>\n</html>"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "$html_template_content.text:html template content"
+    }
+  },
+  "23": {
+    "inputs": {
+      "text": "这里使用的html模板文件的内容（作为$html_template_content.text:html template content的输入） \n包含图片域 image_url\n和文本域 title text\n下面是一个极简的例子 \n\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <style>\n        /* 字体定义 - 开始 */\n        @font-face {\n            font-family: 'LongCang';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/Long-Cang-Regular.ttf') format('truetype');\n            font-weight: normal;\n            font-style: normal;\n            font-display: swap;\n        }\n        @font-face {\n            font-family: 'SourceHanSansCN';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/SourceHanSansCN-Regular.ttf') format('truetype');\n            font-weight: normal;\n            font-style: normal;\n            font-display: swap;\n        }\n        @font-face {\n            font-family: 'SourceHanSansCN';\n            src: url('https://modelscope.cn/datasets/svjack/temp/resolve/master/SourceHanSansCN-Bold.ttf') format('truetype');\n            font-weight: bold;\n            font-style: normal;\n            font-display: swap;\n        }\n        /* 字体定义 - 结束 */\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            width: 1080px;\n            height: 1920px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            font-family: 'LongCang', 'SourceHanSansCN', sans-serif;\n            overflow: hidden;\n            position: relative;\n        }\n\n        .container {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            width: 100%;\n            height: 100%;\n            padding: 40px;\n        }\n\n        /* 图像容器 - 圆形剪裁 */\n        .image-container {\n            position: relative;\n            width: 400px;\n            height: 400px;\n            margin-bottom: 60px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .circular-image {\n            width: 350px;\n            height: 350px;\n            border-radius: 50%;\n            object-fit: cover;\n            border: 8px solid rgba(255, 255, 255, 0.3);\n            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);\n            animation: rotate 20s linear infinite;\n        }\n\n        @keyframes rotate {\n            0% { transform: rotate(0deg); }\n            100% { transform: rotate(360deg); }\n        }\n\n        /* 标题 - 反复缩放动画 */\n        .title-container {\n            margin-bottom: 40px;\n            text-align: center;\n        }\n\n        .scaling-title {\n            font-size: 48px;\n            font-weight: bold;\n            color: #ffffff;\n            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);\n            animation: scalePulse 3s ease-in-out infinite;\n            display: inline-block;\n        }\n\n        @keyframes scalePulse {\n            0% { transform: scale(1); opacity: 0.8; }\n            50% { transform: scale(1.15); opacity: 1; }\n            100% { transform: scale(1); opacity: 0.8; }\n        }\n\n        /* 文本 - 滚动显示 */\n        .text-container {\n            width: 80%;\n            max-width: 800px;\n            height: 200px;\n            overflow: hidden;\n            position: relative;\n            background: rgba(255, 255, 255, 0.1);\n            border-radius: 20px;\n            padding: 25px;\n            margin-top: 30px;\n            backdrop-filter: blur(10px);\n            border: 2px solid rgba(255, 255, 255, 0.2);\n        }\n\n        .scrolling-text {\n            font-size: 28px;\n            color: #ffffff;\n            line-height: 1.5;\n            white-space: pre-wrap;\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            padding: 25px;\n            animation: scrollText 20s linear infinite;\n        }\n\n        @keyframes scrollText {\n            0% {\n                transform: translateY(200px);\n                opacity: 0;\n            }\n            10% {\n                transform: translateY(0);\n                opacity: 1;\n            }\n            90% {\n                transform: translateY(0);\n                opacity: 1;\n            }\n            100% {\n                transform: translateY(-200px);\n                opacity: 0;\n            }\n        }\n\n        /* 装饰元素 */\n        .decoration {\n            position: absolute;\n            width: 100%;\n            height: 100%;\n            pointer-events: none;\n            z-index: -1;\n        }\n\n        .floating-element {\n            position: absolute;\n            width: 60px;\n            height: 60px;\n            background: rgba(255, 255, 255, 0.1);\n            border-radius: 50%;\n            animation: float 8s ease-in-out infinite;\n        }\n\n        .floating-element:nth-child(1) {\n            top: 15%;\n            left: 10%;\n            animation-delay: 0s;\n        }\n\n        .floating-element:nth-child(2) {\n            top: 25%;\n            right: 15%;\n            animation-delay: -2s;\n        }\n\n        .floating-element:nth-child(3) {\n            bottom: 20%;\n            left: 20%;\n            animation-delay: -4s;\n        }\n\n        .floating-element:nth-child(4) {\n            bottom: 30%;\n            right: 10%;\n            animation-delay: -6s;\n        }\n\n        @keyframes float {\n            0%, 100% {\n                transform: translateY(0) rotate(0deg);\n            }\n            50% {\n                transform: translateY(-30px) rotate(180deg);\n            }\n        }\n\n        /* 底部信息 */\n        .footer {\n            position: absolute;\n            bottom: 30px;\n            left: 0;\n            width: 100%;\n            text-align: center;\n            color: rgba(255, 255, 255, 0.7);\n            font-size: 20px;\n            padding: 0 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"decoration\">\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n        <div class=\"floating-element\"></div>\n    </div>\n    \n    <div class=\"container\">\n        <div class=\"image-container\">\n            <img id=\"dynamicImage\" class=\"circular-image\" src=\"{{image_url}}\" alt=\"动态图像\">\n        </div>\n        \n        <div class=\"title-container\">\n            <h1 class=\"scaling-title\">{{title}}</h1>\n        </div>\n        \n        <div class=\"text-container\">\n            <div class=\"scrolling-text\">{{text}}</div>\n        </div>\n    </div>\n    \n    <div class=\"footer\">\n        <p>视频录制时间: {{current_time}} | 帧率: {{fps}}fps | 时长: {{duration}}秒</p>\n    </div>\n</body>\n</html>\n\n不得包含任何其它待渲染域\n且固定使用上面的3个字体文件\n\n此工具内部逻辑有图片的圆形裁剪和旋转。\n\n下面是使用此工具的例子：\n\n1、完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，\n并生成统一的流行风格html动态模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染，每次渲染5s。\n\n2、完成一个4张中国历史建筑的广告任务,使用z_image_turbo生成4张图片，图片中不包含任何文字，\n并生成统一的流行风格html动态模板代码（采用灰色绿色相间的古朴风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行4次渲染，每次渲染6s。\n\n\n\n"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
+    }
+  }
+}
