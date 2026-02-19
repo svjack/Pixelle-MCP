@@ -109,6 +109,11 @@ pip install "numpy<2"
 git clone https://github.com/svjack/ComfyUI-HTMLRenderer
 pip install -r ComfyUI-HTMLRenderer/requirements.txt
 
+git clone https://github.com/christian-byrne/audio-separation-nodes-comfyui
+pip install -r audio-separation-nodes-comfyui/requirements.txt
+git clone https://github.com/1038lab/ComfyUI-QwenASR
+pip install -r ComfyUI-QwenASR/requirements.txt
+
 cd ../../
 cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
@@ -326,13 +331,15 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 ### Audio and Captioning
 1. **Qwen3 TTS**:
    - `Qwen3_TTS_Voice_Design_api` - Text-to-speech voice design.
-   - `Qwen3_TTS_Voice_Clone_api` - Voice clone 
-2. **QwenVL3 Captioning**:
+   - `Qwen3_TTS_Voice_Clone_api` - Voice clone
+2. **QwenVL3 ASR**:
+   - `qwen3_asr_subtitle` - Audio ASR to subtitle
+3. **QwenVL3 Captioning**:
    - `qwenvl3_image_describe_api` - Image captioning using Ollama
    - `qwenvl3_video_describe_api` - Video captioning
-3. **ACE Step 1.5 Text to Music**:
+4. **ACE Step 1.5 Text to Music**:
    - `ace_step_1_5_text_to_music` - Text to Music (default Lyrics [Instrumental] - Pure Music)
-4. **Hunyuanvideo Foley add audio to video**:
+5. **Hunyuanvideo Foley add audio to video**:
    - `{add/merge}_audio_to_video_Foley` - add or merge background audio to video
 
 
@@ -341,9 +348,28 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - 01. render to PNG:
       - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
       - prompt:完成一个3张水族馆的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字,并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
+
    - 02. render to Short video with audio: (video frame)
       - prompt: 完成一个3张水族馆图片合成的有声广告短视频任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对3个渲染后图片加上各自的解说音频生成解说短视频片段，将3个有声视频连接成一个有声短视频
       - prompt:完成一个5张日常漫画图片合成的心灵鸡汤短视频任务,使用z_image_turbo生成5张图片，图片中不包含任何文字，但有相同的日系治愈风格，并生成统一的流行风格html模板代码（采用粉色的浪漫风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行5次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对5个渲染后图片加上各自的解说音频生成解说短视频片段，将5个有声视频连接成一个有声短视频
+
+   - 03. ACE music -> render to Short music video with audio: (video frame):
+      - step1:plan prompt: 
+      	如果让你生成一段中文音乐，之后通过多图片静态配图的方式生成以这段中文音乐为背景的有声视频，你如何来做，给出你的计划，不执行
+      	(大概的逻辑：生成音乐->asr得到音乐内容->根据带时间戳的字幕生成5个对应时间点的应景图片->html渲染5个有文字的图片
+      	->使用空音频根据时间戳确定一些空音频的时长，生成对应的无声视频片段(视频片段加总之后长度为音乐长度)-
+      	>连接这些无声视频片段->对合并后的无声视频片段，以生成的音乐为背景音乐生成最终的有声视频)
+      	注意在整个过程中，挑选空音频的时长要根据asr得到音乐内容的时间戳，并且总长度为一开始生成的中文音乐长度。
+      
+      - step2:exec prompt1: 
+      	按照你的计划生成一个45s的中文歌曲（歌曲的主题为：中文动漫歌曲，以樱花下浪漫的爱情为主题），在生成对应的图片时
+      	使用z_image_turbo（要符合当时时间戳歌词内容的动漫风格背景图片）3张，渲染html的模板设计使用粉色樱花背景（注意只使用3中要求的字体），
+      	并使得图片占较大部分。html的text部分使用一些符合图片内容的浪漫语句。在合并视频时最长边resize到480，每段子视频没有间隔或缓冲，
+      	所有时间加起来为45s。执行到生成对应的无声视频片段，暂时不进行后续连接和加声。
+      	直接执行，不再列出更改后的计划或中间生成的html模板。
+      
+      - step2:exec prompt2: 
+      	继续执行视频连接（resize到480）和将生成音乐作为背景音乐。
 
 
 ## Usage Notes
