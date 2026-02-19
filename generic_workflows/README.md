@@ -373,6 +373,31 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
       - step2:exec prompt2: 
       	继续执行视频连接（resize到480）和将生成音乐作为背景音乐。
 
+2. **Html dynamic template render to Video**: `html_dynamic_template_render` - html dynamic template (support by js) (image + title + text fields) render to video, can produce short videos.
+      - (Similar to NetEase Cloud Music's rotating playback disc)
+   - 01. render to single rotating playback disc:
+      - prompt:完成一个歌曲创作与动态模板视频配置任务，要求这个歌曲符合林则徐这个清末老兵的命运，
+            使用z_image_turbo生成1张褐色仿古林则徐图片，图片中不包含任何文字，
+            设计一个有隆重历史风格的html动态模板（不进行打印），背景中有散散星火和流星，
+            标题和text都有大小反复放缩效果，图片在旋转地同时也进行反复放缩，
+            简短地概括出林则徐的一生。字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单。
+            进行一次45s的渲染，再使用ace生成对应时长（45s）的描述林则徐生平的中文歌曲加入到视频里面，
+            生成最终的歌曲视频。
+            背景知识：
+            林则徐（1785年8月30日－1850年11月22日），字元抚，又字少穆、石麟，晚号俟村老人、瓶泉居士等，
+            福建省侯官县（今福州市）人，祖籍福建福清。他是中国清代后期著名的政治家、思想家和诗人，官至一品，
+            曾任湖广总督、陕甘总督和云贵总督，两次受命为钦差大臣。
+            林则徐最为后世所铭记的是他在禁烟运动中的杰出贡献。1839年，他作为钦差大臣赴广东查禁鸦片，
+            主持了著名的“虎门销烟”，沉重打击了英国等列强的鸦片贸易，维护了国家主权和民族尊严。他主张学习西方先进技术，
+            组织编译《四洲志》，被誉为中国近代“开眼看世界的第一人”。
+            林则徐一生为官清廉，治水有方，关心民生，其“苟利国家生死以，岂因祸福避趋之”的名句，至今仍是爱国精神的典范。
+   - 02. render to 3 rotating playback discs:
+      - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，
+            并生成统一的流行风格html动态模板代码（采用红蓝动态粒子闪烁效果，标题和text都有大小反复放缩效果,
+            字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染，每次渲染5s。
+            3个视频连接成一个视频，再使用ace生成对应时长的背景音乐加入到视频里面。
+
+
 
 ## Usage Notes
 - Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
