@@ -348,11 +348,11 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - 01. render to PNG:
       - prompt:完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
       - prompt:完成一个3张水族馆的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字,并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。
-   <br/>
+
    - 02. render to Short video with audio: (video frame)
       - prompt: 完成一个3张水族馆图片合成的有声广告短视频任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，并生成统一的流行风格html模板代码（采用蓝色的生命风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对3个渲染后图片加上各自的解说音频生成解说短视频片段，将3个有声视频连接成一个有声短视频
       - prompt:完成一个5张日常漫画图片合成的心灵鸡汤短视频任务,使用z_image_turbo生成5张图片，图片中不包含任何文字，但有相同的日系治愈风格，并生成统一的流行风格html模板代码（采用粉色的浪漫风格，字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行5次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,对5个渲染后图片加上各自的解说音频生成解说短视频片段，将5个有声视频连接成一个有声短视频
-   <br/>
+
    - 03. ACE music -> render to Short music video with audio: (video frame):
       - step1:plan prompt: 
       	如果让你生成一段中文音乐，之后通过多图片静态配图的方式生成以这段中文音乐为背景的有声视频，你如何来做，给出你的计划，不执行
@@ -370,7 +370,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
       
       - step2:exec prompt2: 
       	继续执行视频连接（resize到480）和将生成音乐作为背景音乐。
-   <br/>
+
 
 ## Usage Notes
 - Support Manual Step-by-Step Execution && AI-Assisted Planning & Overall Execution
