@@ -1,0 +1,157 @@
+{
+  "1": {
+    "inputs": {
+      "duration": [
+        "15",
+        0
+      ],
+      "sample_rate": 44100,
+      "channels": 2
+    },
+    "class_type": "EmptyAudio",
+    "_meta": {
+      "title": "空音频"
+    }
+  },
+  "3": {
+    "inputs": {
+      "frame_rate": [
+        "11",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "8",
+        0
+      ],
+      "audio": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "4": {
+    "inputs": {
+      "image": "7DC2A6D4-C6EE-4129-9297-CA5E2703337C.webp"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!:image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "a": [
+        "12",
+        0
+      ],
+      "b": [
+        "10",
+        0
+      ],
+      "operation": "multiply"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "整数运算"
+    }
+  },
+  "8": {
+    "inputs": {
+      "multiply_by": [
+        "7",
+        0
+      ],
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "VHS_DuplicateImages",
+    "_meta": {
+      "title": "Repeat Images 🎥🅥🅗🅢"
+    }
+  },
+  "9": {
+    "inputs": {
+      "preview": "1464",
+      "previewMode": null,
+      "source": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$fps.value:frame per second"
+    }
+  },
+  "11": {
+    "inputs": {
+      "int": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "intToFloat _O",
+    "_meta": {
+      "title": "intToFloat _O"
+    }
+  },
+  "12": {
+    "inputs": {
+      "a": [
+        "16",
+        0
+      ],
+      "b": 0,
+      "operation": "add"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "整数运算"
+    }
+  },
+  "15": {
+    "inputs": {
+      "int": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "intToFloat _O",
+    "_meta": {
+      "title": "intToFloat _O"
+    }
+  },
+  "16": {
+    "inputs": {
+      "value": 60
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$empty_audio_length.value:empty audio length in second"
+    }
+  }
+}

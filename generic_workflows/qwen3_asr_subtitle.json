@@ -1,0 +1,91 @@
+{
+  "9": {
+    "inputs": {
+      "model": "Qwen/Qwen3-ASR-1.7B",
+      "precision": "bf16",
+      "attention": "auto",
+      "forced_aligner": "Qwen/Qwen3-ForcedAligner-0.6B",
+      "language": "auto",
+      "hints": "Important terms: ComfyUI, Qwen3-ASR\nUse exact casing for these terms.",
+      "output_format": "none",
+      "output_path": "",
+      "split_mode": "split_by_punctuation_or_pause_or_length",
+      "max_gap_sec": 0.6,
+      "max_chars": [
+        "14",
+        0
+      ],
+      "max_inference_batch_size": 32,
+      "max_new_tokens": 256,
+      "unload_models": true,
+      "audio": [
+        "10",
+        3
+      ]
+    },
+    "class_type": "AILab_Qwen3ASRSubtitle",
+    "_meta": {
+      "title": "Subtitle (QwenASR)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "chunk_fade_shape": "linear",
+      "chunk_length": 10,
+      "chunk_overlap": 0.1,
+      "audio": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "AudioSeparation",
+    "_meta": {
+      "title": "AudioSeparation"
+    }
+  },
+  "11": {
+    "inputs": {
+      "audioUI": "/api/view?filename=ComfyUI_temp_shseo_00001_.flac&type=temp&subfolder=&rand=0.9170643013135465",
+      "audio": [
+        "10",
+        3
+      ]
+    },
+    "class_type": "PreviewAudio",
+    "_meta": {
+      "title": "预览音频"
+    }
+  },
+  "12": {
+    "inputs": {
+      "anything": [
+        "9",
+        1
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "13": {
+    "inputs": {
+      "audio": "王翔介绍衣服.wav",
+      "start_time": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudioUpload",
+    "_meta": {
+      "title": "$audio.audio!:audio"
+    }
+  },
+  "14": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$max_chars.value:max char length one line in subtitle"
+    }
+  }
+}
