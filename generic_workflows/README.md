@@ -392,7 +392,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
          	按照你的计划生成一个45s的中文歌曲（歌曲的主题为：中文动漫歌曲，以樱花下浪漫的爱情为主题），在生成对应的图片时
          	使用z_image_turbo（要符合当时时间戳歌词内容的动漫风格背景图片）3张，渲染html的模板设计使用粉色樱花背景
            （注意只使用3中要求的字体），
-         	并使得图片占较大部分。html的text部分使用一些符合图片内容的浪漫语句。在合并视频时最长边resize到832，
+         	并使得图片占较大部分。html的text部分使用一些符合图片内容的浪漫语句。在合并视频时高resize到832宽到480，
            每段子视频没有间隔或缓冲，
          	所有时间加起来为45s。执行到生成对应的无声视频片段，暂时不进行后续连接和加声。
          	直接执行，不再列出更改后的计划或中间生成的html模板。
@@ -400,7 +400,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
          
          - step2:exec prompt2:
            ```bash
-         	继续执行视频连接（resize到832）和将生成音乐作为背景音乐。
+         	继续执行视频连接（高resize到832宽到480）和将生成音乐作为背景音乐。
            ```
            
       - 002
@@ -419,7 +419,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
           	按照你的计划生成一个90s的中文歌曲（歌曲的主题为：中文动漫歌曲，以星空下思念为主题），在生成对应的图片时
           	使用z_image_turbo（要符合当时时间戳歌词内容的动漫风格背景图片）5张，渲染html的模板设计使用蓝色星空背景
            （注意只使用3中要求的字体），并使得图片占较大部分。html的text部分使用一些符合图片内容的浪漫语句。
-            在合并视频时最长边resize到832，每段子视频没有间隔或缓冲，所有时间加起来为90s。
+            在合并视频时高resize到832宽到480，每段子视频没有间隔或缓冲，所有时间加起来为90s。
           	直接执行，不再列出更改后的计划或中间生成的html模板。
         ```
 
