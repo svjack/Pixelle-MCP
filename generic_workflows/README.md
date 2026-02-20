@@ -400,7 +400,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
         ```
 
 2. **Html dynamic template render to Video**: `html_dynamic_template_render` - html dynamic template (support by js) (image + title + text fields) render to video, can produce short videos.
-      - (Similar to NetEase Cloud Music's rotating playback disc)
+      (Similar to NetEase Cloud Music's rotating playback disc)
    - 01. render to single rotating playback disc:
       - prompt:
       ```bash
