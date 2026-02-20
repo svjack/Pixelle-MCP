@@ -369,7 +369,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
       ```
       - prompt:
      ```bash
-        完成一个5张日常漫画图片合成的心灵鸡汤短视频任务,使用z_image_turbo生成5张图片，图片中不包含任何文字，
+     完成一个5张日常漫画图片合成的心灵鸡汤短视频任务,使用z_image_turbo生成5张图片，图片中不包含任何文字，
      但有相同的日系治愈风格，并生成统一的流行风格html模板代码（采用粉色的浪漫风格，字体采用要符合模板说明中的要求，
      模板中不包含任何按钮，且结构简单），并进行5次渲染。使用给你的音频作为音频克隆参考音频克隆每个图片对应的解说text,
      对5个渲染后图片加上各自的解说音频生成解说短视频片段，将5个有声视频连接成一个有声短视频
@@ -404,7 +404,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - 01. render to single rotating playback disc:
       - prompt:
       ```bash
-         完成一个歌曲创作与动态模板视频配置任务，要求这个歌曲符合林则徐这个清末老兵的命运，
+            完成一个歌曲创作与动态模板视频配置任务，要求这个歌曲符合林则徐这个清末老兵的命运，
             使用z_image_turbo生成1张褐色仿古林则徐图片，图片中不包含任何文字，
             设计一个有隆重历史风格的html动态模板（不进行打印），背景中有散散星火和流星，
             标题和text都有大小反复放缩效果，图片在旋转地同时也进行反复放缩，
@@ -423,7 +423,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
    - 02. render to 3 rotating playback discs:
       - prompt:
         ```bash
-        完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，
+            完成一个3张流行音乐演唱会的广告任务,使用z_image_turbo生成3张图片，图片中不包含任何文字，
             并生成统一的流行风格html动态模板代码（采用红蓝动态粒子闪烁效果，标题和text都有大小反复放缩效果,
             字体采用要符合模板说明中的要求，模板中不包含任何按钮，且结构简单），并进行3次渲染，每次渲染5s。
             3个视频连接成一个视频，再使用ace生成对应时长的背景音乐加入到视频里面。
