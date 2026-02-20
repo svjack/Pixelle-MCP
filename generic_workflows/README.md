@@ -127,6 +127,7 @@ pip install sageattention-1.0.6-py3-none-any.whl
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 cp work/google-chrome-stable_current_amd64.deb .
 sudo apt install ./google-chrome-stable_current_amd64.deb
+
 google-chrome --version
 # Google Chrome 145.0.7632.75 
 which google-chrome
