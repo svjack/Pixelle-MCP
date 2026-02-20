@@ -164,8 +164,14 @@
     "inputs": {
       "video": "81cd181fd9e24d49bff06eb07cb57046.mp4",
       "force_rate": 0,
-      "custom_width": 0,
-      "custom_height": 0,
+      "custom_width": [
+        "85",
+        0
+      ],
+      "custom_height": [
+        "86",
+        0
+      ],
       "frame_load_cap": 0,
       "skip_first_frames": 0,
       "select_every_nth": 1,
@@ -223,6 +229,33 @@
     "class_type": "PrimitiveStringMultiline",
     "_meta": {
       "title": "$video_caption.value!:video caption in english"
+    }
+  },
+  "85": {
+    "inputs": {
+      "value": 480
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_width.value!:video width resize by"
+    }
+  },
+  "86": {
+    "inputs": {
+      "value": 832
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_height.value!:video height resize by"
+    }
+  },
+  "87": {
+    "inputs": {
+      "text": "这里的自定义(custom)长宽是必须的，需要先使用视频信息工具获得，之后按照最长边取832或其它手动取定值，最短边按照原视频比例计算决定"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
     }
   }
 }

@@ -14,8 +14,14 @@
     "inputs": {
       "video": "wan_00001.mp4",
       "force_rate": 0,
-      "custom_width": 0,
-      "custom_height": 0,
+      "custom_width": [
+        "5",
+        0
+      ],
+      "custom_height": [
+        "6",
+        0
+      ],
       "frame_load_cap": 0,
       "skip_first_frames": 0,
       "select_every_nth": 1,
@@ -65,6 +71,33 @@
     "class_type": "VHS_VideoInfo",
     "_meta": {
       "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "value": 480
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_width.value!:video width resize by"
+    }
+  },
+  "6": {
+    "inputs": {
+      "value": 832
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_height.value!:video height resize by"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "这里的自定义(custom)长宽是必须的，需要先使用视频信息工具获得，之后按照最长边取832或其它手动取定值，最短边按照原视频比例计算决定"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
     }
   }
 }
