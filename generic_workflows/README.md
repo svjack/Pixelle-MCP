@@ -117,6 +117,10 @@ pip install -r audio-separation-nodes-comfyui/requirements.txt
 git clone https://github.com/1038lab/ComfyUI-QwenASR
 pip install -r ComfyUI-QwenASR/requirements.txt
 
+git clone https://github.com/svjack/ComfyUI-FLOAT
+pip install -r ComfyUI-FLOAT/requirements.txt
+pip install torchcodec
+
 cd ../../
 cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
@@ -313,6 +317,15 @@ wget https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/sp
 cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 ```
 
+### Float Audio driven talking portrait
+```bash
+conda activate system
+modelscope download svjack/float --local_dir="float"
+cp -r float ComfyUI/models
+cp float/s3fd-619a316812.pth .cache/torch/hub/checkpoints/s3fd-619a316812.pth
+cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zip
+```
+
 ## Available Workflows
 
 ### Image Generation/Editing
@@ -331,6 +344,13 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 4. **Wan2.2 SVI Multiple shots Image-to-Video**: `Wan2_2_SVI_6_Shots_image_to_video_api` - Multiple Shots Image-to-video generation
 5. **Wan2.1 Pose Transfer**: `wan21_video_pose_transfer` - Image & Video-Pose-to-video generation
 6. **Wan2.1 InfiniteTalk digit man**: `wan21_single_digital_man_infinite_talker_{num}_segments` - Image & Audio-to-video generation
+7. **Float Audio driven talking portrait**: `float_audio_driven_talking_portrait` - Image & Audio-to-video talking portrait generation
+   - ```bash
+      通过z_image 生成一个512x512的男青年头像 ace生成一段中文浪漫歌曲30s 在使用音频驱动float模型生成有声视频
+     ```
+     ```bash
+      使用告白的一句话克隆这个音频 生成一个512x512男性头像 使用audio driven生成一个视频
+     ```
 
 ### Audio and Captioning
 1. **Qwen3 TTS**:
