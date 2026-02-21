@@ -1,0 +1,111 @@
+{
+  "1": {
+    "inputs": {
+      "model": "float.pth"
+    },
+    "class_type": "LoadFloatModels",
+    "_meta": {
+      "title": "Load Float Models"
+    }
+  },
+  "6": {
+    "inputs": {
+      "frame_rate": [
+        "16",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "10",
+        0
+      ],
+      "audio": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "10": {
+    "inputs": {
+      "a_cfg_scale": 2,
+      "r_cfg_scale": 1,
+      "e_cfg_scale": 1,
+      "fps": [
+        "16",
+        0
+      ],
+      "emotion": "none",
+      "crop": true,
+      "seed": 982045898717762,
+      "ref_image": [
+        "14",
+        0
+      ],
+      "ref_audio": [
+        "12",
+        0
+      ],
+      "float_pipe": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "FloatProcess",
+    "_meta": {
+      "title": "Float Process"
+    }
+  },
+  "12": {
+    "inputs": {
+      "audio": "f3c2a4c2dbf84b85bb5d4ed045666cc5.mp3",
+      "start_time": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudioUpload",
+    "_meta": {
+      "title": "$audio.audio!:audio"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "15": {
+    "inputs": {
+      "value": 25
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$fps.value:frame per seconds"
+    }
+  },
+  "16": {
+    "inputs": {
+      "int": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "intToFloat _O",
+    "_meta": {
+      "title": "intToFloat _O"
+    }
+  }
+}
