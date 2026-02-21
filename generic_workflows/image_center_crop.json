@@ -1,0 +1,62 @@
+{
+  "1": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$crop_width.value!"
+    }
+  },
+  "3": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "4": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$crop_height.value!"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": [
+        "1",
+        0
+      ],
+      "height": [
+        "4",
+        0
+      ],
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "CenterCropImages",
+    "_meta": {
+      "title": "裁剪图像（中心）"
+    }
+  },
+  "6": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  }
+}

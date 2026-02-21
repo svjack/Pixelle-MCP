@@ -1,0 +1,207 @@
+{
+  "3": {
+    "inputs": {
+      "model": "RMBG-2.0",
+      "sensitivity": 1,
+      "process_res": 1024,
+      "mask_blur": 0,
+      "mask_offset": 0,
+      "invert_output": false,
+      "refine_foreground": false,
+      "background": "Color",
+      "background_color": "#7f7f7f",
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "RMBG",
+    "_meta": {
+      "title": "去除背景 (RMBG)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "video_info": [
+        "16",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "6": {
+    "inputs": {
+      "mask": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "遮罩转换为图像"
+    }
+  },
+  "8": {
+    "inputs": {
+      "mode": "normal",
+      "foreground_opacity": 1,
+      "foreground_scale": 1,
+      "position_x": [
+        "19",
+        0
+      ],
+      "position_y": [
+        "20",
+        0
+      ],
+      "foreground": [
+        "3",
+        0
+      ],
+      "background": [
+        "11",
+        0
+      ],
+      "foreground_mask": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "AILab_ImageCombiner",
+    "_meta": {
+      "title": "图像组合 (RMBG) 🖼️"
+    }
+  },
+  "10": {
+    "inputs": {
+      "frame_rate": [
+        "5",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "11": {
+    "inputs": {
+      "amount": [
+        "12",
+        0
+      ],
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "RepeatImageBatch",
+    "_meta": {
+      "title": "复制图像批次"
+    }
+  },
+  "12": {
+    "inputs": {
+      "any": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "easy lengthAnything",
+    "_meta": {
+      "title": "任何长度"
+    }
+  },
+  "14": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_width.value!:video width resize by"
+    }
+  },
+  "15": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_height.value!:video height resize by"
+    }
+  },
+  "16": {
+    "inputs": {
+      "video": "wan_00001.mp4",
+      "force_rate": 0,
+      "custom_width": [
+        "14",
+        0
+      ],
+      "custom_height": [
+        "15",
+        0
+      ],
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "17": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$background_image.image!"
+    }
+  },
+  "18": {
+    "inputs": {
+      "text": "导入的视频是前景，导入视频自定义(custom)长宽是必须的，需要先使用视频信息工具获得，之后按照最长边取512或其它手动取定值，最短边按照原视频比例计算决定。\n\nx_position 和 y_position 默认值都是50，即是在x轴和y轴的中心放置前景图像，你需要调用图像信息工具和视频信息工具得到图像和视频的长宽，之后通过调节y_position 的值使得 前景视频在平移后，下面的边界紧贴图像的下边界。（这个值并不是100，而是当前景视频高度与背景图片高度相同时取50，当前景视频高度小于背景图片高度时要适当从50增加：前景按照差值的比例向下平移，使得前景视频在平移后，下面的边界紧贴图像的下边界。）\n\n这个视频换背景工具默认不保持音频，当原视频有音频时需要使用添加音频工具使得换背景后的视频具有音频。\n\n"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
+    }
+  },
+  "19": {
+    "inputs": {
+      "value": 50
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$x_position.value!:position in x axis"
+    }
+  },
+  "20": {
+    "inputs": {
+      "value": 50
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$y_position.value!:position in y axis"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "1": {
+    "inputs": {
+      "video": "a4bc6e62ddf549d1b71c9a66c723f8eb.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "V0",
+      "audioUI": "",
+      "audio": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "保存音频 (MP3)"
+    }
+  }
+}
