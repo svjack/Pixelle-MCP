@@ -121,6 +121,9 @@ git clone https://github.com/svjack/ComfyUI-FLOAT
 pip install -r ComfyUI-FLOAT/requirements.txt
 pip install torchcodec
 
+git clone https://github.com/1038lab/ComfyUI-RMBG
+pip install -r ComfyUI-RMBG/requirements.txt
+
 cd ../../
 cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
@@ -337,7 +340,7 @@ cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zi
       - 使用 `图片1` 和 `图片2` 的提示词格式指定对应的图片 
    - `qwen_image_edit_two_pic_head_swap` - Face swapping
 
-### Video Generation
+### Video Generation\Edit
 1. **Wan2.2 Text-to-Video**: `Wan2_2_text_to_video_api` - Text-to-video generation
 2. **Wan2.2 Image-to-Video**: `Wan2_2_image_to_video_api` - Image-to-video generation
 3. **Wan2.2 First-Last Image-to-Video**: `wan2_2_first_last_image_to_video_inpaint_api` - FL-Image-to-video generation (default length 81, don't below this value)
@@ -350,6 +353,21 @@ cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zi
      ```
      ```bash
       使用告白的一句话克隆这个音频 生成一个512x512男性头像 使用audio driven生成一个视频
+     ```
+8. **Change Video Background by RMBG**: `change_video_background_by_image` - Image & Video change background.
+   - ```bash
+      对于有声视频用z_image生成一个风景图片替换原来视频的背景,
+      要求生成的图片为1024x1024,再通过中心裁剪得到一个高度与视频相同，宽度比视频
+      左右各宽128的背景图片，替换原视频背景，并对替换后的视频添加原视频的音频,
+      注意在添加音频时要保持与替换背景后视频的新宽高不变。
+     ```
+     ```bash
+      通过z_image 生成一个512x512的韩国美女头像 ace生成一段中文浪漫歌曲30s 
+      再使用音频驱动float模型生成有声视频，有声视频长宽都为512
+      对于有声视频用z_image生成一个符合歌曲背景的风景图片替换原来视频的背景,
+      要求生成的图片为1024x1024,再通过中心裁剪得到一个高度与视频相同，宽度比视频
+      左右各宽256的背景图片(宽1024，高512)，替换原视频背景，并对替换后的视频添加原视频的音频,
+      注意在添加音频时要保持与替换背景后视频的新宽高不变。
      ```
 
 ### Audio and Captioning
