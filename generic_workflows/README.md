@@ -32,6 +32,7 @@ comfy --here install
 
 ### 2. Launch ComfyUI
 ```bash
+conda activate system
 comfy launch -- --listen 0.0.0.0
 ```
 
