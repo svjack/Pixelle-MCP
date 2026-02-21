@@ -1,0 +1,87 @@
+{
+  "3": {
+    "inputs": {
+      "frame_rate": 8,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "4": {
+    "inputs": {
+      "index": -1,
+      "filenames": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VHS_SelectFilename",
+    "_meta": {
+      "title": "Select Filename 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "video": [
+        "4",
+        0
+      ],
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "Load Video (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "{\n    \"source_fps\": 8.0,\n    \"source_frame_count\": 1,\n    \"source_duration\": 0.125,\n    \"source_width\": 832,\n    \"source_height\": 1248,\n    \"loaded_fps\": 8.0,\n    \"loaded_frame_count\": 1,\n    \"loaded_duration\": 0.125,\n    \"loaded_width\": 832,\n    \"loaded_height\": 1248\n}",
+      "anything": [
+        "5",
+        3
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "通过将图片作为有一帧的视频，获得的视频基本信息，包含长宽等，这样可以得到图片长宽。"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
+    }
+  }
+}

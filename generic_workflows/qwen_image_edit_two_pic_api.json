@@ -187,5 +187,14 @@
     "_meta": {
       "title": "$image2.image!:second image"
     }
+  },
+  "23": {
+    "inputs": {
+      "text": "注意这里$prompt.text!:image prompt 中的写作中要使用“图片1”和“图片2”来称呼两个输入图片来生成图片编辑提示词句式。"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
+    }
   }
 }

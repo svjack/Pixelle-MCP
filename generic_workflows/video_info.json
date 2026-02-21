@@ -20,7 +20,6 @@
   },
   "2": {
     "inputs": {
-      "text": "{\n    \"source_fps\": 30.0,\n    \"source_frame_count\": 1351,\n    \"source_duration\": 45.03333333333333,\n    \"source_width\": 1080,\n    \"source_height\": 1920,\n    \"loaded_fps\": 30.0,\n    \"loaded_frame_count\": 1,\n    \"loaded_duration\": 0.03333333333333333,\n    \"loaded_width\": 1080,\n    \"loaded_height\": 1920\n}",
       "anything": [
         "1",
         3
