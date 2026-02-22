@@ -124,6 +124,9 @@ pip install torchcodec
 git clone https://github.com/1038lab/ComfyUI-RMBG
 pip install -r ComfyUI-RMBG/requirements.txt
 
+git clone https://github.com/svjack/ComfyUI-AdvancedLivePortrait
+pip install -r ComfyUI-AdvancedLivePortrait/requirements.txt
+
 cd ../../
 cp work/sageattention-1.0.6-py3-none-any.whl .
 pip install sageattention-1.0.6-py3-none-any.whl 
@@ -355,7 +358,30 @@ cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zi
      ```bash
       使用告白的一句话克隆这个音频 生成一个512x512男性头像 使用audio driven生成一个视频
      ```
-8. **Change Video Background by RMBG**: `change_video_background_by_image` - Image & Video change background.
+8. **Video driven LivePortrait**: `video_driven_LivePortrait` - Image & Video transform expression from video onto Image.
+   - ```bash
+      通过z_image 生成一个512x512的韩国美女头像 ace生成一段中文浪漫歌曲30s 
+      再使用音频驱动float模型生成有声视频，有声视频长宽都为512
+      
+      使用z_image 生成一个宽480高648的樱花背景正面上半身韩国美女头像
+      （身子和人脸必须正面镜头）
+      
+      使用视频引导的肖像视频生成工具结合float生成的视频和你上面生成的图片（宽480高648）
+      生成视频，并对生成的视频添加原视频的音频,
+      注意在添加音频时要保持导入的宽高与视频本身的宽高一致（宽480高648）。
+     ```
+     ```bash
+      通过z_image 生成一个512x512的男青年头像 ace生成一段中文浪漫歌曲30s 
+      再使用音频驱动float模型生成有声视频，有声视频长宽都为512
+      
+      使用z_image 生成一个宽480高648的星空背景正面上半身韩国帅青年头像
+      （身子和人脸必须正面镜头）
+      
+      使用视频引导的肖像视频生成工具结合float生成的视频和你上面生成的图片（宽480高648）
+      生成视频，并对生成的视频添加原视频的音频,
+      注意在添加音频时要保持导入的宽高与视频本身的宽高一致（宽480高648）。
+     ```
+10. **Change Video Background by RMBG**: `change_video_background_by_image` - Image & Video change background.
    - ```bash
       对于有声视频用z_image生成一个风景图片替换原来视频的背景,
       要求生成的图片为1024x1024,再通过中心裁剪得到一个高度与视频相同，宽度比视频
