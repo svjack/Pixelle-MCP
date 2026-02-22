@@ -1,0 +1,132 @@
+{
+  "1": {
+    "inputs": {
+      "retargeting_eyes": 0,
+      "retargeting_mouth": 0,
+      "crop_factor": [
+        "12",
+        0
+      ],
+      "turn_on": true,
+      "tracking_src_vid": false,
+      "animate_without_vid": true,
+      "command": "",
+      "src_images": [
+        "10",
+        0
+      ],
+      "driving_images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "AdvancedLivePortrait",
+    "_meta": {
+      "title": "Advanced Live Portrait (PHM)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "frame_rate": [
+        "5",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "5": {
+    "inputs": {
+      "video_info": [
+        "8",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo",
+    "_meta": {
+      "title": "Video Info 🎥🅥🅗🅢"
+    }
+  },
+  "6": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_width.value!:video width resize by"
+    }
+  },
+  "7": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "$custom_height.value!:video height resize by"
+    }
+  },
+  "8": {
+    "inputs": {
+      "video": "wan_00001.mp4",
+      "force_rate": 0,
+      "custom_width": [
+        "6",
+        0
+      ],
+      "custom_height": [
+        "7",
+        0
+      ],
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "$video.video!:input video"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "导入的视频是前景，导入视频自定义(custom)长宽是必须的，需要先使用视频信息工具获得，之后按照最长边取512或其它手动取定值，最短边按照原视频比例计算决定。\n\ncrop_factor 默认为2.5，在没有给定的情况下使用默认值\n\n这个视频换背景工具默认不保持音频，当原视频有音频时需要使用添加音频工具使得换背景后的视频具有音频。\n\n"
+    },
+    "class_type": "Text _O",
+    "_meta": {
+      "title": "MCP"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "王翔头部.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "$image.image!"
+    }
+  },
+  "12": {
+    "inputs": {
+      "value": 2.5
+    },
+    "class_type": "easy float",
+    "_meta": {
+      "title": "$crop_factor.value:crop factor of head bbox"
+    }
+  }
+}

@@ -48,14 +48,14 @@
       ],
       "emotion": "none",
       "crop": true,
-      "seed": 982045898717762,
+      "seed": 130819864507205,
       "ref_image": [
         "14",
         0
       ],
       "ref_audio": [
-        "12",
-        0
+        "18",
+        3
       ],
       "float_pipe": [
         "1",
@@ -69,7 +69,7 @@
   },
   "12": {
     "inputs": {
-      "audio": "f3c2a4c2dbf84b85bb5d4ed045666cc5.mp3",
+      "audio": "bdd2eaa9abab466595750c7c671c82b2.mp3",
       "start_time": 0,
       "duration": 0
     },
@@ -80,7 +80,7 @@
   },
   "14": {
     "inputs": {
-      "image": "王翔头部.png"
+      "image": "c4ab3c94925b4c5e8449192a46eab9b7.png"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -106,6 +106,21 @@
     "class_type": "intToFloat _O",
     "_meta": {
       "title": "intToFloat _O"
+    }
+  },
+  "18": {
+    "inputs": {
+      "chunk_fade_shape": "linear",
+      "chunk_length": 10,
+      "chunk_overlap": 0.1,
+      "audio": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "AudioSeparation",
+    "_meta": {
+      "title": "AudioSeparation"
     }
   }
 }
