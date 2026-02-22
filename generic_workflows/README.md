@@ -325,6 +325,7 @@ cp wan2.1_infiniteTalk_single_fp16.safetensors ComfyUI/models/model_patches
 conda activate system
 modelscope download svjack/float --local_dir="float"
 cp -r float ComfyUI/models
+mkdir -p .cache/torch/hub/checkpoints
 cp float/s3fd-619a316812.pth .cache/torch/hub/checkpoints/s3fd-619a316812.pth
 cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zip
 ```
